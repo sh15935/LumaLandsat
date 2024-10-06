@@ -1,0 +1,298 @@
+<style>
+.satellite-tracker {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 1019px;
+  width: 100%;
+  max-width: 1036px;
+  align-items: center;
+  padding: 36px 0 105px;
+  margin-top: 5px;
+}
+
+.background-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  align-self: flex-start;
+  min-height: 56px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.search-icon {
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 14px 4px;
+}
+
+.search-icon img {
+  aspect-ratio: 1;
+  object-fit: contain;
+  width: 28px;
+}
+
+.search-input {
+  color: #fff;
+  width: 199px;
+  font: 400 18px Inter, sans-serif;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.filter-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.satellite-info {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  width: 352px;
+  max-width: 100%;
+  gap: 6px;
+  padding: 18px 20px;
+  margin: 645px 0 0 35px;
+}
+
+.satellite-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1;
+}
+
+.satellite-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.satellite-name {
+  color: #fff;
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+}
+
+.next-pass {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+}
+
+.favorite-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  width: 390px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 17px 0 -21px 29px;
+}
+
+.timeline-marker {
+  aspect-ratio: 1;
+  object-fit: contain;
+  width: 15px;
+}
+
+.timeline-container {
+  overflow-x: auto;
+  display: flex;
+  margin-top: 4px;
+  width: 100%;
+  max-width: 390px;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: flex-start;
+}
+
+.timeline-ticks {
+  display: flex;
+  margin-right: -455px;
+  align-items: flex-end;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
+.timeline-tick {
+  width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.timeline-tick-large {
+  height: 40px;
+}
+
+.timeline-tick-small {
+  height: 28px;
+}
+
+.timeline-tick-current {
+  border: 2px solid #9747ff;
+}
+
+.timeline-time {
+  color: #fff;
+  text-align: center;
+  margin-top: 4px;
+  font: 400 12px Inter, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .satellite-tracker {
+    max-width: 100%;
+    padding-bottom: 100px;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .satellite-info {
+    margin-top: 40px;
+  }
+
+  .timeline {
+    margin-bottom: 10px;
+  }
+}
+</style>
+
+<section class="satellite-tracker">
+  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/12c854f662056dd05332a5fd7db81a953fad76a3f46adcea3b1e816f9ab48da6?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="background-image" />
+  
+  <form class="search-bar" role="search">
+    <button type="submit" class="search-icon" aria-label="Search">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ddd9aa1e535f3d9b582f1cac815c62935945896030cfadd97f89c6d43ade96bb?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" />
+    </button>
+    <input type="search" class="search-input" placeholder="Favorite" aria-label="Search for favorite satellite" />
+    <button type="button" class="filter-icon" aria-label="Filter">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/302f36da07f1ddee21855dbad2966f326dc7c3dafc3a68d3273d258680463eb3?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" />
+    </button>
+  </form>
+
+  <article class="satellite-info">
+    <div class="satellite-details">
+      <div class="satellite-text">
+        <h2 class="satellite-name">sat8</h2>
+        <p class="next-pass">Next pass: In 17 Hours</p>
+      </div>
+    </div>
+    <button class="favorite-icon" aria-label="Add to favorites">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d22f9d235b85c7604fe56c7a5b6c21980ae3581e792f6d34e8a8b4e2a2b8c7aa?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" />
+    </button>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b7ce18f5d7ae6e1fd1fc4e5ac1406ef8ae967614ff6854ba896419a494f9180c?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="satellite-path" />
+  </article>
+
+  <div class="timeline">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2aae99854773ad53e3f333dbc6f65be9d7fe6e752d56de117a4c7299316638e1?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="timeline-marker" />
+    <div class="timeline-container">
+      <div class="timeline-ticks">
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large timeline-tick-current"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-small"></div>
+        <div class="timeline-tick timeline-tick-large"></div>
+      </div>
+    </div>
+    <time class="timeline-time">5:03 PM</time>
+  </div>
+</section>
