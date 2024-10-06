@@ -1,0 +1,609 @@
+<style>
+.satellite-detail {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  padding: 30px 80px 90px 29px;
+}
+
+@media (max-width: 991px) {
+  .satellite-detail {
+    padding: 0 20px;
+  }
+}
+
+.header {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px 19px 0;
+}
+
+@media (max-width: 991px) {
+  .header {
+    max-width: 100%;
+    padding-right: 20px;
+  }
+}
+
+.header-content {
+  display: flex;
+  padding-right: 17px;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-button {
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: var(--sds-size-stroke-border) solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  width: 56px;
+  height: 56px;
+  padding: 0 4px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.satellite-name {
+  color: #fff;
+  font: 400 24px Inter, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .satellite-name {
+    white-space: normal;
+  }
+}
+
+.next-passes {
+  display: flex;
+  width: 100%;
+  max-width: 1119px;
+  align-items: flex-end;
+  gap: 20px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .next-passes {
+    max-width: 100%;
+  }
+}
+
+.next-passes-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  margin-top: 157px;
+}
+
+@media (max-width: 991px) {
+  .next-passes-label {
+    margin-top: 40px;
+  }
+}
+
+.next-passes-image {
+  width: 100%;
+  align-self: flex-start;
+}
+
+.all-passes-link {
+  color: #9747ff;
+  font-size: 15px;
+  text-align: right;
+  margin-top: 157px;
+}
+
+@media (max-width: 991px) {
+  .all-passes-link {
+    margin-top: 40px;
+  }
+}
+
+.passes-list {
+  display: flex;
+  margin-top: 23px;
+  width: 100%;
+  max-width: 1119px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .passes-list {
+    max-width: 100%;
+  }
+}
+
+.pass-item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .pass-item {
+    max-width: 100%;
+  }
+}
+
+.pass-divider {
+  height: 2px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 991px) {
+  .pass-divider {
+    max-width: 100%;
+  }
+}
+
+.pass-content {
+  display: flex;
+  margin-top: 12px;
+  width: 100%;
+  align-items: center;
+  gap: 11px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .pass-content {
+    max-width: 100%;
+  }
+}
+
+.pass-info {
+  display: flex;
+  min-width: 240px;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  justify-content: flex-start;
+  flex: 1;
+  margin: auto 0;
+  font: 400 16px Inter, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .pass-info {
+    max-width: 100%;
+  }
+}
+
+.pass-time {
+  min-width: 240px;
+  width: 100%;
+  flex: 1;
+  margin: auto 0;
+}
+
+@media (max-width: 991px) {
+  .pass-time {
+    max-width: 100%;
+  }
+}
+
+.pass-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.telemetry {
+  display: flex;
+  margin-top: 14px;
+  width: 100%;
+  max-width: 1119px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .telemetry {
+    max-width: 100%;
+  }
+}
+
+.section-label {
+  width: 100%;
+  padding-bottom: 17px;
+  color: rgba(255, 255, 255, 0.5);
+  font: 500 12px Inter, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .section-label {
+    max-width: 100%;
+    padding-right: 20px;
+    white-space: normal;
+  }
+}
+
+.telemetry-grid {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .telemetry-grid {
+    max-width: 100%;
+  }
+}
+
+.telemetry-item {
+  display: flex;
+  min-width: 240px;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+@media (max-width: 991px) {
+  .telemetry-item {
+    max-width: 100%;
+  }
+}
+
+.telemetry-content {
+  display: flex;
+  margin-top: 12px;
+  width: 100%;
+  align-items: center;
+  gap: 11px;
+  font-family: Inter, sans-serif;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .telemetry-content {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+.telemetry-info {
+  display: flex;
+  min-width: 240px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  margin: auto 0;
+}
+
+@media (max-width: 991px) {
+  .telemetry-info {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+.telemetry-label {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@media (max-width: 991px) {
+  .telemetry-label {
+    max-width: 100%;
+  }
+}
+
+.telemetry-value {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .telemetry-value {
+    max-width: 100%;
+  }
+}
+
+.details {
+  display: flex;
+  width: 100%;
+  max-width: 1119px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .details {
+    max-width: 100%;
+  }
+}
+
+.details-grid {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .details-grid {
+    max-width: 100%;
+  }
+}
+
+.details-item {
+  display: flex;
+  min-width: 240px;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+@media (max-width: 991px) {
+  .details-item {
+    max-width: 100%;
+  }
+}
+
+.details-content {
+  display: flex;
+  margin-top: 12px;
+  width: 100%;
+  align-items: center;
+  gap: 11px;
+  font-family: Inter, sans-serif;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .details-content {
+    max-width: 100%;
+  }
+}
+
+.details-info {
+  display: flex;
+  min-width: 240px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  margin: auto 0;
+}
+
+@media (max-width: 991px) {
+  .details-info {
+    max-width: 100%;
+  }
+}
+
+.details-label {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@media (max-width: 991px) {
+  .details-label {
+    max-width: 100%;
+  }
+}
+
+.details-value {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .details-value {
+    max-width: 100%;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+
+<section class="satellite-detail">
+  <header class="header">
+    <div class="header-content">
+      <button class="icon-button" aria-label="Back">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66bce4db2add083b075ad133f5c5cd1142d81bd1c5461c21c9860783128cfb92?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="icon" />
+      </button>
+      <h1 class="satellite-name">sat8</h1>
+    </div>
+  </header>
+  
+  <div class="next-passes">
+    <h2 class="next-passes-label">NEXT PASSES ABOVE YOU</h2>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e34020fcb0c104798651fdc4339c6e2cf2839f001f3f591adf60252a6ca015df?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Satellite pass visualization" class="next-passes-image" />
+    <a href="#" class="all-passes-link">All Passes</a>
+  </div>
+  
+  <ul class="passes-list">
+    <li class="pass-item">
+      <div class="pass-divider"></div>
+      <div class="pass-content">
+        <div class="pass-info">
+          <span class="pass-time">Today Now</span>
+        </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/aea790ffc3e3170ee9e7ee8a161b06fd051b8fd13458564643f0df66666af15e?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="pass-icon" />
+      </div>
+    </li>
+    <li class="pass-item">
+      <div class="pass-divider"></div>
+      <div class="pass-content">
+        <div class="pass-info">
+          <span class="pass-time">Jun 24 04:21 AM</span>
+        </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/634202400d04b635bab83e4c08e0107d1abe7b02336c41f0eec4bbf541d580f0?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="pass-icon" />
+      </div>
+    </li>
+    <li class="pass-item">
+      <div class="pass-divider"></div>
+      <div class="pass-content">
+        <div class="pass-info">
+          <span class="pass-time">Jul 1 01:11 PM</span>
+        </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b108e611c63e6e140f4092fc03407540a2d3efeefe374a0865617d46809f9377?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="pass-icon" />
+      </div>
+    </li>
+    <li class="pass-item">
+      <div class="pass-divider"></div>
+      <div class="pass-content">
+        <div class="pass-info">
+          <span class="pass-time">Jul 22 08:21 PM</span>
+        </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b108e611c63e6e140f4092fc03407540a2d3efeefe374a0865617d46809f9377?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="pass-icon" />
+      </div>
+    </li>
+  </ul>
+  
+  <section class="telemetry">
+    <h2 class="section-label">TELEMETRY</h2>
+    <div class="telemetry-grid">
+      <div class="telemetry-item">
+        <div class="pass-divider"></div>
+        <div class="telemetry-content">
+          <div class="telemetry-info">
+            <span class="telemetry-label">Azimuth</span>
+            <span class="telemetry-value">120,1°</span>
+          </div>
+        </div>
+      </div>
+      <div class="telemetry-item">
+        <div class="pass-divider"></div>
+        <div class="telemetry-content">
+          <div class="telemetry-info">
+            <span class="telemetry-label">Velocity</span>
+            <span class="telemetry-value">7,5 km / sec</span>
+          </div>
+        </div>
+      </div>
+      <div class="telemetry-item">
+        <div class="pass-divider"></div>
+        <div class="telemetry-content">
+          <div class="telemetry-info">
+            <span class="telemetry-label">Elevation</span>
+            <span class="telemetry-value">35,5°</span>
+          </div>
+        </div>
+      </div>
+      <div class="telemetry-item">
+        <div class="pass-divider"></div>
+        <div class="telemetry-content">
+          <div class="telemetry-info">
+            <span class="telemetry-label">Distance</span>
+            <span class="telemetry-value">705 km</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="details">
+    <h2 class="section-label">DETAILS</h2>
+    <div class="details-grid">
+      <div class="details-item">
+        <div class="pass-divider"></div>
+        <div class="details-content">
+          <div class="details-info">
+            <div class="details-info">
+            <span class="details-label">Launch</span>
+            <span class="details-value">11 February 2013</span>
+          </div>
+        </div>
+      </div>
+      <div class="details-item">
+        <div class="pass-divider"></div>
+        <div class="details-content">
+          <div class="details-info">
+            <span class="details-label">Launch pad</span>
+            <span class="details-value">Vandenberg Air Force Base, Space Launch Complex 3E</span>
+          </div>
+        </div>
+      </div>
+      <div class="details-item">
+        <div class="pass-divider"></div>
+        <div class="details-content">
+          <div class="details-info">
+            <span class="details-label">Manufacturer</span>
+            <span class="details-value">Orbital Sciences Corporation</span>
+          </div>
+        </div>
+      </div>
+      <div class="details-item">
+        <div class="pass-divider"></div>
+        <div class="details-content">
+          <div class="details-info">
+            <span class="details-label">Operator</span>
+            <span class="details-value">NASA/USGS</span>
+          </div>
+        </div>
+      </div>
+      <div class="details-item">
+        <div class="pass-divider"></div>
+        <div class="details-content">
+          <div class="details-info">
+            <span class="details-label">Orbital period</span>
+            <span class="details-value">98.9 min</span>
+          </div>
+        </div>
+      </div>
+      <div class="details-item">
+        <div class="pass-divider"></div>
+        <div class="details-content">
+          <div class="details-info">
+            <span class="details-label">Orbits per day</span>
+            <span class="details-value">14.5</span>
+          </div>
+        </div>
+      </div>
+      <div class="details-item">
+        <div class="pass-divider"></div>
+        <div class="details-content">
+          <div class="details-info">
+            <span class="details-label">Length</span>
+            <span class="details-value">4.3 m (14.1 ft)</span>
+          </div>
+        </div>
+      </div>
+      <div class="details-item">
+        <div class="pass-divider"></div>
+        <div class="details-content">
+          <div class="details-info">
+            <span class="details-label">Width</span>
+            <span class="details-value">2.4 m (7.9 ft)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
