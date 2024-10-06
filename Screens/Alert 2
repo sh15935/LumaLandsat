@@ -1,0 +1,105 @@
+<style>
+.alert-section { background-color: #000; display: flex; flex-direction: column; overflow: hidden; }
+.home-planet { display: flex; width: 100%; flex-direction: column; overflow: hidden; padding: 48px 14px 209px; }
+.header-container { display: flex; width: 100%; gap: 27px; flex-wrap: wrap; }
+.button-group { display: flex; align-items: start; gap: 14px; }
+.icon-button { display: flex; justify-content: center; align-items: center; width: 56px; height: 56px; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.05); background-color: rgba(255, 255, 255, 0.1); padding: 0 4px; }
+.icon-button img { width: 28px; height: 28px; object-fit: contain; }
+.purple-button { background-color: #9747FF; }
+.search-bar { display: flex; align-items: center; flex-grow: 1; height: 56px; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.05); background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(2px); }
+.search-icon { display: flex; justify-content: center; align-items: center; width: 56px; height: 56px; }
+.main-content { width: 100%; max-width: 1022px; margin: 12px 0 -42px; }
+.content-wrapper { display: flex; gap: 20px; }
+.alerts-column { display: flex; flex-direction: column; width: 45%; }
+.alerts-container { display: flex; flex-direction: column; padding: 12px 12px 278px; }
+.category-title { color: rgba(255, 255, 255, 0.5); font: 500 12px Inter, sans-serif; }
+.alert-item { display: flex; margin-top: 17px; width: 100%; flex-direction: column; }
+.divider { height: 2px; border: 2px solid rgba(255, 255, 255, 0.1); }
+.alert-content { display: flex; margin-top: 12px; width: 100%; align-items: center; gap: 11px; flex-wrap: wrap; }
+.alert-info { display: flex; align-items: center; gap: 9px; flex: 1; min-width: 240px; }
+.alert-icon { width: 38px; height: 38px; object-fit: contain; }
+.alert-text { display: flex; flex-direction: column; flex: 1; min-width: 240px; }
+.satellite-name { color: #fff; font-size: 16px; font-weight: 400; }
+.alert-time { color: rgba(255, 255, 255, 0.7); font-size: 14px; font-weight: 500; }
+.delete-icon { width: 24px; height: 24px; }
+.suggestions-title { margin-top: 16px; }
+.map-column { width: 55%; margin-left: 20px; }
+.map-image { aspect-ratio: 1.21; object-fit: contain; width: 100%; margin-top: 137px; }
+
+@media (max-width: 991px) {
+  .home-planet { max-width: 100%; padding-bottom: 100px; }
+  .header-container { max-width: 100%; }
+  .main-content { max-width: 100%; margin-bottom: 10px; }
+  .content-wrapper { flex-direction: column; align-items: stretch; gap: 0; }
+  .alerts-column, .map-column { width: 100%; }
+  .alerts-container { max-width: 100%; padding: 0 20px 100px 0; }
+  .alert-content, .alert-info, .alert-text { max-width: 100%; }
+  .map-image { max-width: 100%; margin-top: 40px; }
+}
+</style>
+
+<section class="alert-section">
+  <div class="home-planet">
+    <header class="header-container">
+      <div class="button-group">
+        <button class="icon-button">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/915ca25f77bcd5dbb935d9e7c5b4d718f958bc68432f782f0f90087543e607d0?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Menu icon" />
+        </button>
+        <button class="icon-button purple-button">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/39ec0a0283ab451f9c5ddb709fedaa93124f5af9f4410304249bc9cbadcf0c0f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Notification icon" />
+        </button>
+      </div>
+      <form class="search-bar" role="search">
+        <label for="search-input" class="visually-hidden">Search</label>
+        <input type="search" id="search-input" class="visually-hidden" />
+        <button type="submit" class="search-icon">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1da5e7aee08f41450ed937a228166e23946d2edb6a18a0329d4ce3e9706383df?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Search icon" />
+        </button>
+      </form>
+    </header>
+    <main class="main-content">
+      <div class="content-wrapper">
+        <section class="alerts-column">
+          <div class="alerts-container">
+            <h2 class="category-title">YOUR ALERTS</h2>
+            <article class="alert-item">
+              <div class="divider" role="separator"></div>
+              <div class="alert-content">
+                <div class="alert-info">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/783306c38350000e8503b6ae0e9244f24a52c0da9f9d158d9ad909250bc90557?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Satellite icon" class="alert-icon" />
+                  <div class="alert-text">
+                    <h3 class="satellite-name">Sat8</h3>
+                    <time class="alert-time">Oct 6 - 02:30 PM</time>
+                  </div>
+                </div>
+                <button class="delete-icon" aria-label="Delete alert">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/194315e1b76d4e3b426f1fcd59718e2e5ad20ddb7f806bff36470ca2f561bf7d?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" />
+                </button>
+              </div>
+              <div class="divider" role="separator"></div>
+            </article>
+            <article class="alert-item">
+              <div class="divider" role="separator"></div>
+              <div class="alert-content">
+                <div class="alert-info">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/783306c38350000e8503b6ae0e9244f24a52c0da9f9d158d9ad909250bc90557?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Satellite icon" class="alert-icon" />
+                  <div class="alert-text">
+                    <h3 class="satellite-name">Sat9</h3>
+                    <time class="alert-time">Oct 14 - 06:32 PM</time>
+                  </div>
+                </div>
+                <button class="delete-icon" aria-label="Delete alert">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/194315e1b76d4e3b426f1fcd59718e2e5ad20ddb7f806bff36470ca2f561bf7d?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" />
+                </button>
+              </div>
+            </article>
+            <h2 class="category-title suggestions-title">SMART SUGGESTIONS</h2>
+          </div>
+        </section>
+        <aside class="map-column">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/07473e83ef439f347c519a1378b2f509d442a971a4ac8bbd6f8531b1745e9d4a?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Satellite map" class="map-image" />
+        </aside>
+      </div>
+    </main>
+  </div>
+</section>
