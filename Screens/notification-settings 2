@@ -1,0 +1,261 @@
+<style>
+.notification-settings {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 48px 14px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  gap: 27px;
+  flex-wrap: wrap;
+}
+
+.button-group {
+  display: flex;
+  align-items: start;
+  gap: 14px;
+}
+
+.icon-button {
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.primary-button {
+  background-color: #9747FF;
+}
+
+.secondary-button {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-bar {
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  display: flex;
+  min-height: 56px;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  width: 28px;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1134px;
+  margin: 12px 0 -89px;
+  display: flex;
+  gap: 20px;
+}
+
+.settings-menu {
+  width: 50%;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+}
+
+.category-title {
+  color: rgba(255, 255, 255, 0.5);
+  font: 500 12px Inter, sans-serif;
+  margin-bottom: 8px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-item-content {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font: 400 16px Inter, sans-serif;
+  flex-grow: 1;
+}
+
+.menu-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.active-item {
+  color: #9747FF;
+}
+
+.notification-panel {
+  width: 50%;
+  background-color: rgba(151, 71, 255, 0.35);
+  padding: 8px 32px 202px 13px;
+  margin-top: 94px;
+}
+
+.panel-title {
+  color: #fff;
+  font: 400 24px Inter, sans-serif;
+  margin-bottom: 5px;
+}
+
+.notification-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.toggle-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.toggle-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.switch {
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px;
+}
+
+.switch-handle {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+@media (max-width: 991px) {
+  .notification-settings {
+    padding-bottom: 100px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .settings-menu,
+  .notification-panel {
+    width: 100%;
+  }
+
+  .notification-panel {
+    margin-top: 40px;
+    padding: 0 20px 100px 0;
+  }
+}
+</style>
+
+<section class="notification-settings">
+  <header class="header">
+    <div class="button-group">
+      <button class="icon-button primary-button" aria-label="Primary action">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/915ca25f77bcd5dbb935d9e7c5b4d718f958bc68432f782f0f90087543e607d0?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="icon" />
+      </button>
+      <button class="icon-button secondary-button" aria-label="Secondary action">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cd18eb1e35b08d718aae13d78e135481062f7c42d7dc183159ef1223c1c38901?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="icon" />
+      </button>
+    </div>
+    <div class="search-bar">
+      <button class="icon-button" aria-label="Search">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c19c32cd734b38e5ade1881685ed6ac1eb8351a81e55f66567f94dcade7ec519?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="icon" />
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <nav class="settings-menu">
+      <div class="menu-section">
+        <h2 class="category-title">Settings</h2>
+        <a href="#" class="menu-item">
+          <div class="menu-item-content">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fc619727fb702df25fec1f075a9cf31c5574b88dda2dcc87208fff4ed1919c9d?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="menu-icon" />
+            <span>Profile</span>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="arrow-icon" />
+        </a>
+        <a href="#" class="menu-item active-item">
+          <div class="menu-item-content">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bd5bb089a6bc720dd3f4ca7a927931f1bac1cda52f4b35ca907413e282576639?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="menu-icon" />
+            <span>Notification</span>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c160a420a0472346001ceab4fd2daa6ead70baeecc0af6b92472ea6ea40394f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="arrow-icon" />
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-content">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/308084a7784aa29711867eedb45932f521d7a995a6bd5ec9e4509caff4683383?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="menu-icon" />
+            <span>Subscription</span>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="arrow-icon" />
+        </a>
+      </div>
+      <div class="menu-section">
+        <h2 class="category-title">ABOUT</h2>
+        <a href="#" class="menu-item">
+          <div class="menu-item-content">
+            <span>Rate Us</span>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="arrow-icon" />
+        </a>
+        <a href="#" class="menu-item">
+          <div class="menu-item-content">
+            <span>Help</span>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="arrow-icon" />
+        </a>
+      </div>
+    </nav>
+
+    <section class="notification-panel">
+      <h1 class="panel-title">Notification settings</h1>
+      <div class="notification-toggle">
+        <div class="toggle-content">
+          <h3 class="toggle-title">Notification</h3>
+          <p class="toggle-description">Send a notification when tracked satellites become visible</p>
+        </div>
+        <div class="switch" role="switch" tabindex="0" aria-checked="false">
+          <div class="switch-handle"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</section>
