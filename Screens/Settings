@@ -1,0 +1,142 @@
+<style>
+.settings-container { background-color: #000; display: flex; flex-direction: column; overflow: hidden; }
+.home-planet { display: flex; width: 100%; flex-direction: column; overflow: hidden; padding: 48px 14px 209px; }
+@media (max-width: 991px) { .home-planet { max-width: 100%; padding-bottom: 100px; } }
+.header-actions { display: flex; width: 100%; gap: 27px; flex-wrap: wrap; }
+@media (max-width: 991px) { .header-actions { max-width: 100%; } }
+.button-group { display: flex; align-items: start; gap: 14px; }
+.icon-button { border-radius: 100px; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; padding: 0 4px; border: 1px solid rgba(255, 255, 255, 0.05); }
+.icon-button-primary { background-color: #9747FF; }
+.icon-button-secondary { background-color: rgba(255, 255, 255, 0.1); }
+.icon-image { aspect-ratio: 1; object-fit: contain; object-position: center; width: 28px; margin: auto; }
+.searchbar { align-items: center; border-radius: 100px; border: 1px solid rgba(255, 255, 255, 0.05); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(2px); display: flex; min-height: 56px; overflow: hidden; justify-content: start; flex-grow: 1; }
+.search-icon { border-radius: 100px; align-self: stretch; display: flex; width: 56px; align-items: center; justify-content: center; padding: 14px 4px; }
+.main-content { width: 100%; max-width: 1022px; margin: 12px 0 -42px; }
+@media (max-width: 991px) { .main-content { max-width: 100%; margin-bottom: 10px; } }
+.content-wrapper { gap: 20px; display: flex; }
+@media (max-width: 991px) { .content-wrapper { flex-direction: column; align-items: stretch; gap: 0; } }
+.settings-column { display: flex; flex-direction: column; width: 45%; }
+@media (max-width: 991px) { .settings-column { width: 100%; } }
+.settings-list { display: flex; flex-direction: column; padding: 12px 12px 116px; }
+@media (max-width: 991px) { .settings-list { max-width: 100%; padding: 0 20px 100px 0; } }
+.category-title { color: rgba(255, 255, 255, 0.5); align-self: start; font: 500 12px Inter, sans-serif; }
+.info-row { display: flex; margin-top: 8px; width: 100%; flex-direction: column; justify-content: center; }
+@media (max-width: 991px) { .info-row { max-width: 100%; } }
+.stroke-visible { transform: rotate(-3.1415925661670165rad); display: flex; width: 100%; flex-direction: column; }
+@media (max-width: 991px) { .stroke-visible { max-width: 100%; } }
+.stroke-line { z-index: 10; height: 2px; border: 2px solid rgba(255, 255, 255, 0.1); }
+@media (max-width: 991px) { .stroke-line { max-width: 100%; } }
+.row-content { display: flex; margin-top: 12px; width: 100%; align-items: center; gap: 11px; justify-content: start; flex-wrap: wrap; }
+@media (max-width: 991px) { .row-content { max-width: 100%; } }
+.row-title { align-self: stretch; display: flex; min-width: 240px; align-items: center; gap: 9px; color: #fff; white-space: nowrap; justify-content: start; flex-wrap: wrap; flex: 1; margin: auto 0; font: 400 16px Inter, sans-serif; }
+@media (max-width: 991px) { .row-title { max-width: 100%; white-space: initial; } }
+.row-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 38px; align-self: stretch; margin: auto 0; }
+.row-text { align-self: stretch; min-width: 240px; flex: 1; margin: auto 0; }
+@media (max-width: 991px) { .row-text { max-width: 100%; white-space: initial; } }
+.arrow-icon-wrapper { align-self: stretch; display: flex; align-items: start; gap: 12px; justify-content: start; width: 24px; margin: auto 0; }
+.arrow-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 24px; }
+.stroke-invisible { display: flex; min-height: 0; margin-top: 12px; width: 100%; }
+@media (max-width: 991px) { .stroke-invisible { max-width: 100%; } }
+.image-column { display: flex; flex-direction: column; width: 55%; margin-left: 20px; }
+@media (max-width: 991px) { .image-column { width: 100%; } }
+.image-wrapper { display: flex; flex-direction: column; position: relative; min-height: 562px; margin-top: 137px; width: 100%; align-items: start; padding: 131px 70px 407px; }
+@media (max-width: 991px) { .image-wrapper { max-width: 100%; margin-top: 40px; padding: 100px 20px; } }
+.background-image { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; object-position: center; }
+.icon-overlay { position: relative; display: flex; align-items: start; gap: 12px; justify-content: start; }
+.overlay-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 24px; }
+</style>
+
+<section class="settings-container">
+  <div class="home-planet">
+    <header class="header-actions">
+      <div class="button-group">
+        <button class="icon-button icon-button-primary">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/915ca25f77bcd5dbb935d9e7c5b4d718f958bc68432f782f0f90087543e607d0?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="icon-image" alt="Primary action icon" />
+        </button>
+        <button class="icon-button icon-button-secondary">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/39ec0a0283ab451f9c5ddb709fedaa93124f5af9f4410304249bc9cbadcf0c0f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="icon-image" alt="Secondary action icon" />
+        </button>
+      </div>
+      <div class="searchbar">
+        <button class="search-icon">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c19c32cd734b38e5ade1881685ed6ac1eb8351a81e55f66567f94dcade7ec519?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="icon-image" alt="Search icon" />
+        </button>
+      </div>
+    </header>
+    <main class="main-content">
+      <div class="content-wrapper">
+        <div class="settings-column">
+          <nav class="settings-list">
+            <h2 class="category-title">Settings</h2>
+            <ul>
+              <li class="info-row">
+                <div class="stroke-visible"><div class="stroke-line"></div></div>
+                <div class="row-content">
+                  <div class="row-title">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/91dcacdf060d4cec7c61f75f071d93c1d99c8816b150ecd4a3980d7105ebc893?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="row-icon" alt="Profile icon" />
+                    <span class="row-text">Profile</span>
+                  </div>
+                  <div class="arrow-icon-wrapper">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="arrow-icon" alt="Arrow icon" />
+                  </div>
+                </div>
+                <div class="stroke-invisible"></div>
+              </li>
+              <li class="info-row">
+                <div class="stroke-visible"><div class="stroke-line"></div></div>
+                <div class="row-content">
+                  <div class="row-title">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/91dcacdf060d4cec7c61f75f071d93c1d99c8816b150ecd4a3980d7105ebc893?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="row-icon" alt="Notification icon" />
+                    <span class="row-text">Notification</span>
+                  </div>
+                  <div class="arrow-icon-wrapper">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="arrow-icon" alt="Arrow icon" />
+                  </div>
+                </div>
+              </li>
+              <li class="info-row">
+                <div class="row-content">
+                  <div class="row-title">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c7c80e22c7345046ff58664943b8eebc84dbc245da69cc79510b3352a6dab7b?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="row-icon" alt="Subscription icon" />
+                    <span class="row-text">Subscription</span>
+                  </div>
+                  <div class="arrow-icon-wrapper">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="arrow-icon" alt="Arrow icon" />
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <h2 class="category-title">ABOUT</h2>
+            <ul>
+              <li class="info-row">
+                <div class="row-content">
+                  <div class="row-title">
+                    <span class="row-text">Rate Us</span>
+                  </div>
+                </div>
+              </li>
+              <li class="info-row">
+                <div class="row-content">
+                  <div class="row-title">
+                    <span class="row-text">Help</span>
+                  </div>
+                  <div class="arrow-icon-wrapper">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="arrow-icon" alt="Arrow icon" />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="image-column">
+          <div class="image-wrapper">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/573076d30b8823ebb4982bd7e4ddec30c7582ea114beddc03a1b847826e07f7a?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="background-image" alt="Background image" />
+            <div class="icon-overlay">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="overlay-icon" alt="Overlay icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</section>
