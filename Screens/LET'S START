@@ -1,0 +1,464 @@
+<style>
+.satellite-tracker-container {
+  background-color: #000;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px 100px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 76px 0 165px 80px;
+}
+
+@media (max-width: 991px) {
+  .satellite-tracker-container {
+    padding: 0 0 100px 20px;
+  }
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0;
+}
+
+.logo-circle {
+  border-radius: 50%;
+  align-self: stretch;
+  display: flex;
+  width: 100%;
+  padding-bottom: 11px;
+  flex-direction: column;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.logo-icons {
+  align-self: center;
+  z-index: 10;
+  display: flex;
+  width: 108px;
+  max-width: 100%;
+  align-items: start;
+  gap: 20px;
+  justify-content: space-between;
+  margin: -4px 0 0 15px;
+}
+
+.icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 16px;
+  border-radius: 0;
+}
+
+.icon-offset {
+  margin-top: 12px;
+}
+
+.logo-main {
+  aspect-ratio: 1.38;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  background-blend-mode: screen;
+  margin-top: 9px;
+}
+
+.logo-bottom-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 16px;
+  border-radius: 0;
+  align-self: end;
+  margin: 7px 49px 0 0;
+}
+
+@media (max-width: 991px) {
+  .logo-bottom-icon {
+    margin-right: 10px;
+  }
+}
+
+.brand-name {
+  color: #fff;
+  margin-top: 17px;
+  font: 400 24px Tilt Warp, sans-serif;
+}
+
+.brand-description {
+  color: #fff;
+  margin-top: 10px;
+  font: 700 15px Space Grotesk, sans-serif;
+}
+
+.signup-container {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .signup-container {
+    max-width: 100%;
+  }
+}
+
+.back-button {
+  transform: rotate(180deg);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.09);
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  justify-content: center;
+  padding: 15px 41px;
+}
+
+@media (max-width: 991px) {
+  .back-button {
+    padding: 0 20px;
+  }
+}
+
+.back-icon {
+  aspect-ratio: 1.57;
+  object-fit: contain;
+  object-position: center;
+  width: 22px;
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.welcome-section {
+  align-self: stretch;
+}
+
+@media (max-width: 991px) {
+  .welcome-section {
+    max-width: 100%;
+  }
+}
+
+.welcome-content {
+  gap: 20px;
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  .welcome-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+}
+
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 43%;
+  margin-left: 0;
+}
+
+@media (max-width: 991px) {
+  .welcome-text {
+    width: 100%;
+  }
+}
+
+.welcome-message {
+  display: flex;
+  margin-top: 14px;
+  height: 103px;
+  flex-direction: column;
+  font-family: Poppins, sans-serif;
+  color: #fff;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .welcome-message {
+    margin-right: -9px;
+    white-space: initial;
+  }
+}
+
+.app-name {
+  display: flex;
+  min-height: 151px;
+  max-width: 100%;
+  width: 190px;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+@media (max-width: 991px) {
+  .app-name {
+    white-space: initial;
+  }
+}
+
+.lets {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.start {
+  font-size: 63px;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .start {
+    font-size: 40px;
+  }
+}
+
+.welcome-image {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 57%;
+  margin-left: 20px;
+}
+
+@media (max-width: 991px) {
+  .welcome-image {
+    width: 100%;
+  }
+}
+
+.satellite-image {
+  aspect-ratio: 1.42;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  background-blend-mode: screen;
+  flex-grow: 1;
+}
+
+.signup-form-container {
+  display: flex;
+  margin-top: 65px;
+  min-height: 500px;
+  width: 367px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+  font-family: Poppins, sans-serif;
+  color: #fff;
+  font-weight: 500;
+  justify-content: start;
+}
+
+@media (max-width: 991px) {
+  .signup-form-container {
+    margin-top: 40px;
+  }
+}
+
+.signup-form {
+  display: flex;
+  min-height: 255px;
+  width: 315px;
+  max-width: 100%;
+  flex-direction: column;
+  font-size: 17px;
+  line-height: 1;
+  justify-content: start;
+  padding: 10px 10px 53px;
+}
+
+.form-fields {
+  display: flex;
+  height: 192px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.input-group {
+  display: flex;
+  width: 100%;
+  max-width: 295px;
+  padding-top: 12px;
+  flex-direction: column;
+}
+
+.input-label {
+  align-self: start;
+  display: flex;
+  gap: 40px 100px;
+}
+
+.input-icon {
+  aspect-ratio: 0.92;
+  object-fit: contain;
+  object-position: center;
+  width: 24px;
+}
+
+.input-underline {
+  aspect-ratio: 333.33;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  z-index: 10;
+  margin-top: 14px;
+}
+
+.email-group {
+  margin-top: 23px;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .email-group {
+    white-space: initial;
+  }
+}
+
+.password-group {
+  margin-top: 15px;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .password-group {
+    white-space: initial;
+  }
+}
+
+.signup-button {
+  border-radius: 20px;
+  display: flex;
+  margin-top: 31px;
+  width: 329px;
+  max-width: 100%;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  font-size: 21px;
+  letter-spacing: 1.57px;
+  line-height: 1;
+  justify-content: center;
+  padding: 23px 81px;
+}
+
+@media (max-width: 991px) {
+  .signup-button {
+    padding: 0 20px;
+  }
+}
+
+.button-text {
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.button-icon {
+  aspect-ratio: 1.57;
+  object-fit: contain;
+  object-position: center;
+  width: 22px;
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.terms {
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  margin-top: 31px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+
+<section class="satellite-tracker-container">
+  <div class="logo-container">
+    <div class="logo-circle">
+      <div class="logo-icons">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecc9367ffd88bcfae97426ce1ef4485913e6ed4b5e05b6aa231fb9093694fc9b?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="icon" />
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a333018ea1ab2aa0a112ef88042dd92309ef66f9e6a86ebd49c4770855d120a7?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="icon icon-offset" />
+      </div>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e0ba1825e418db71639456abd9dc8d62039476e4d039d6e82b40694acb667d8f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Satellite tracker logo" class="logo-main" />
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8486af52e405843d2b0095b436c8d8f848c54780288d6eae44a176a67b80055f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="logo-bottom-icon" />
+    </div>
+    <h1 class="brand-name">lumasatellite</h1>
+    <p class="brand-description">satellite tracker</p>
+  </div>
+  <div class="signup-container">
+    <button class="back-button" aria-label="Go back">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/913d7a03e2fd7a06ace0abd04c21817599e99ba1f0d9368ffb46066c78b4c4a0?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="back-icon" />
+    </button>
+    <div class="welcome-section">
+      <div class="welcome-content">
+        <div class="welcome-text">
+          <div class="welcome-message">
+            <div class="app-name">
+              <div class="lets">Let's</div>
+              <div class="start">Start</div>
+            </div>
+          </div>
+        </div>
+        <div class="welcome-image">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/13f34a89293fb70c80254cdc302d8000259c07965d8fe3be5981e8674c264018?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Satellite illustration" class="satellite-image" />
+        </div>
+      </div>
+    </div>
+    <div class="signup-form-container">
+      <form class="signup-form">
+        <div class="form-fields">
+          <div class="input-group">
+            <label for="name" class="input-label">
+              <span>Your Name</span>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6016cfffba564c543a673c73fa1f97775dd4bd4c20cb2ac34ff258e287d09df1?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="input-icon" />
+            </label>
+            <input type="text" id="name" name="name" aria-label="Your Name" required />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a27f1bcee63f7b1a9589014a5b08582fd4d88418b13e8497a4b29fce31555f71?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="input-underline" />
+          </div>
+          <div class="input-group email-group">
+            <label for="email" class="input-label">
+              <span>Email</span>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/81c311a1064d5418cdb850657b195e8ffb9523a8ddd4225028674055383b96fd?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="input-icon" />
+            </label>
+            <input type="email" id="email" name="email" aria-label="Email" required />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a27f1bcee63f7b1a9589014a5b08582fd4d88418b13e8497a4b29fce31555f71?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="input-underline" />
+          </div>
+          <div class="input-group password-group">
+            <label for="password" class="input-label">
+              <span>Password</span>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b16944b944e316060753cced5a299de93c26a73caa4b73340ac80068bfb6439?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="input-icon" />
+            </label>
+            <input type="password" id="password" name="password" aria-label="Password" required />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a27f1bcee63f7b1a9589014a5b08582fd4d88418b13e8497a4b29fce31555f71?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="input-underline" />
+          </div>
+        </div>
+        <button type="submit" class="signup-button">
+          <span class="button-text">Sign Up</span>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/abf441bf9bd3f34123a2963e9d26e25e6dfa3c3fc9ead62d146c5c5cbc62e0d4?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="button-icon" />
+        </button>
+      </form>
+      <p class="terms">Terms and Conditions</p>
+    </div>
+  </div>
+</section>
