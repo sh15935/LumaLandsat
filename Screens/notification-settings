@@ -1,0 +1,363 @@
+<style>
+.notification-settings {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 48px 14px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  gap: 27px;
+  flex-wrap: wrap;
+}
+
+.button-group {
+  display: flex;
+  align-items: start;
+  gap: 14px;
+}
+
+.icon-button {
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.primary-button {
+  background-color: #9747FF;
+}
+
+.secondary-button {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-bar {
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  display: flex;
+  min-height: 56px;
+  overflow: hidden;
+  justify-content: start;
+  flex-grow: 1;
+  flex-basis: auto;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1134px;
+  margin: 12px 0 -89px;
+}
+
+.two-column-layout {
+  gap: 20px;
+  display: flex;
+}
+
+.settings-column {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.settings-list {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 12px 0 116px;
+}
+
+.settings-category {
+  color: rgba(255, 255, 255, 0.5);
+  font: 500 12px Inter, sans-serif;
+}
+
+.settings-item {
+  display: flex;
+  margin-top: 8px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.settings-divider {
+  height: 2px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.settings-row {
+  display: flex;
+  margin-top: 12px;
+  width: 100%;
+  align-items: center;
+  gap: 11px;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.settings-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 38px;
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.settings-label {
+  color: #fff;
+  font: 400 16px Inter, sans-serif;
+}
+
+.active-label {
+  color: #9747FF;
+}
+
+.chevron-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 24px;
+}
+
+.notification-column {
+  background-color: rgba(151, 71, 255, 0.35);
+  display: flex;
+  margin-top: 94px;
+  flex-direction: column;
+  width: 50%;
+  padding: 8px 0 19px;
+}
+
+.notification-header {
+  color: #fff;
+  font: 400 24px Inter, sans-serif;
+}
+
+.notification-toggle {
+  display: flex;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.toggle-switch {
+  border-radius: 25px;
+  background-color: #9747FF;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4px;
+}
+
+.toggle-handle {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+.time-range {
+  display: flex;
+  width: 228px;
+  max-width: 100%;
+  gap: 40px 100px;
+  color: #fff;
+  margin: 9px 0 0 79px;
+  font: 500 12px Inter, sans-serif;
+}
+
+.time-indicator {
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  width: 23px;
+  height: 16px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 991px) {
+  .notification-settings {
+    padding-bottom: 100px;
+  }
+
+  .header {
+    max-width: 100%;
+  }
+
+  .content-wrapper {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .two-column-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .settings-column,
+  .notification-column {
+    width: 100%;
+  }
+
+  .settings-list {
+    max-width: 100%;
+    padding-bottom: 100px;
+  }
+
+  .notification-column {
+    margin-top: 40px;
+  }
+
+  .time-range {
+    margin-left: 10px;
+  }
+}
+</style>
+
+<section class="notification-settings">
+  <header class="header">
+    <div class="button-group">
+      <button class="icon-button primary-button">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/915ca25f77bcd5dbb935d9e7c5b4d718f958bc68432f782f0f90087543e607d0?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Primary action" class="icon" />
+      </button>
+      <button class="icon-button secondary-button">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/39ec0a0283ab451f9c5ddb709fedaa93124f5af9f4410304249bc9cbadcf0c0f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Secondary action" class="icon" />
+      </button>
+    </div>
+    <form class="search-bar" role="search">
+      <label for="search-input" class="visually-hidden">Search</label>
+      <input type="search" id="search-input" class="search-input" aria-label="Search" />
+      <button type="submit" class="icon-button">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c19c32cd734b38e5ade1881685ed6ac1eb8351a81e55f66567f94dcade7ec519?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Search" class="icon" />
+      </button>
+    </form>
+  </header>
+
+  <main class="content-wrapper">
+    <div class="two-column-layout">
+      <nav class="settings-column">
+        <ul class="settings-list">
+          <li>
+            <h2 class="settings-category">Settings</h2>
+            <ul>
+              <li class="settings-item">
+                <div class="settings-divider"></div>
+                <div class="settings-row">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/91dcacdf060d4cec7c61f75f071d93c1d99c8816b150ecd4a3980d7105ebc893?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="settings-icon" />
+                  <span class="settings-label">Profile</span>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Navigate to profile" class="chevron-icon" />
+                </div>
+              </li>
+              <li class="settings-item">
+                <div class="settings-divider"></div>
+                <div class="settings-row">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/45eca66f76b4c0c01713d082abc00c08e844a171be3e6ae8a916494986eef1f9?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="settings-icon" />
+                  <span class="settings-label active-label">Notification</span>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c160a420a0472346001ceab4fd2daa6ead70baeecc0af6b92472ea6ea40394f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Navigate to notifications" class="chevron-icon" />
+                </div>
+              </li>
+              <li class="settings-item">
+                <div class="settings-divider"></div>
+                <div class="settings-row">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c7c80e22c7345046ff58664943b8eebc84dbc245da69cc79510b3352a6dab7b?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="settings-icon" />
+                  <span class="settings-label">Subscription</span>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Navigate to subscription" class="chevron-icon" />
+                </div>
+                <div class="settings-divider"></div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="settings-category">ABOUT</h2>
+            <ul>
+              <li class="settings-item">
+                <div class="settings-divider"></div>
+                <div class="settings-row">
+                  <span class="settings-label">Rate Us</span>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Navigate to rate us" class="chevron-icon" />
+                </div>
+              </li>
+              <li class="settings-item">
+                <div class="settings-divider"></div>
+                <div class="settings-row">
+                  <span class="settings-label">Help</span>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/742d202cb7d63bb3892c4f5d453f7e8966221b8ed2289d91c0c5693c50ad4849?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Navigate to help" class="chevron-icon" />
+                </div>
+                <div class="settings-divider"></div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="notification-column">
+        <h1 class="notification-header">Notification settings</h1>
+        <div class="notification-toggle">
+          <div class="settings-item">
+            <div class="settings-divider"></div>
+            <div class="settings-row">
+              <div>
+                <h3 class="settings-label">Notification</h3>
+                <p class="settings-label">Send a notification when tracked satellites become visible</p>
+              </div>
+            </div>
+          </div>
+          <div class="toggle-switch" role="switch" aria-checked="true" tabindex="0">
+            <span class="toggle-handle"></span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-divider"></div>
+          <div class="settings-row">
+            <div>
+              <h3 class="settings-label">Notification window</h3>
+              <p class="settings-label">From 3:30PM to 5:10PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="time-range">
+          <div>
+            <div class="time-indicator"></div>
+            <span>3:30PM</span>
+          </div>
+          <div>
+            <div class="time-indicator"></div>
+            <span>5:10PM</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-divider"></div>
+          <div class="settings-row">
+            <div>
+              <h3 class="settings-label">Alert</h3>
+              <p class="settings-label">5 Minutes before</p>
+            </div>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d0515e812cfb1e625c3c04b411f65796127a9a7a717a550e10187bbc02135008?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Edit alert time" class="chevron-icon" />
+          </div>
+          <div class="settings-divider"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</section>
