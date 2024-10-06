@@ -7,6 +7,9 @@ LumaLandsat: is a satellite-based platform designed to help farmers monitor and 
 •⁠  ⁠Users can customize the notification lead time for satellite overpasses and select the method of notification.
 •⁠  ⁠The platform allows users to filter data based on cloud cover and choose specific timeframes for satellite acquisitions.
 •⁠  ⁠Through an intuitive interface, farmers can visualize data on maps, download reports in CSV format, and view spectral signatures, which reflect crop health over time.
+
+# Design 
+•⁠  ⁠https://www.figma.com/design/RkfQppmoFUsTmZASesbu8n/Untitled?node-id=39-5723&node-type=frame&t=HSgvIoHZdnIATtdr-0
   
 # Benefits:
 •⁠  ⁠Precision Agriculture: Farmers receive detailed, real-time information, allowing them to make data-driven decisions.
