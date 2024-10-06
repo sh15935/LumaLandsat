@@ -1,0 +1,231 @@
+<style>
+.landsat-map {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 34px 99px 7px;
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 58px;
+  flex-wrap: wrap;
+  padding: 47px 0 47px 19px;
+}
+
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 56px;
+  height: 56px;
+  padding: 0 4px;
+}
+
+.icon-image {
+  aspect-ratio: 1;
+  object-fit: contain;
+  width: 28px;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  flex-grow: 1;
+  min-height: 56px;
+}
+
+.search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 14px 4px;
+}
+
+.grid-container {
+  align-self: center;
+  display: flex;
+  width: 100%;
+  max-width: 1198px;
+  flex-direction: column;
+  margin: 12px 0 0 24px;
+}
+
+.grid-title {
+  color: #fff;
+  text-align: center;
+  align-self: center;
+  font: 500 32px Inter, sans-serif;
+}
+
+.pixel-grid {
+  margin-top: 62px;
+}
+
+.pixel-row {
+  display: flex;
+  gap: 20px;
+}
+
+.pixel-cell {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  color: #fff;
+  text-align: center;
+  font: 600 16px Inter, sans-serif;
+}
+
+.pixel-button {
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.39);
+  min-height: 56px;
+  padding: 18px;
+  line-height: 1;
+}
+
+.pixel-info {
+  border-radius: 8px;
+  background-color: rgba(217, 217, 217, 0.24);
+  line-height: 20px;
+  padding: 19px 70px 50px;
+}
+
+.target-pixel {
+  font-weight: 900;
+}
+
+.target-pixel .pixel-button {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #9747ff;
+}
+
+.target-pixel .pixel-info {
+  color: rgba(151, 71, 255, 0.75);
+}
+
+@media (max-width: 991px) {
+  .landsat-map {
+    padding-right: 20px;
+  }
+
+  .search-container {
+    max-width: 100%;
+  }
+
+  .grid-container {
+    max-width: 100%;
+  }
+
+  .pixel-grid {
+    margin: 40px 8px 0 0;
+  }
+
+  .pixel-row {
+    flex-direction: column;
+  }
+
+  .pixel-cell {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .pixel-button,
+  .pixel-info {
+    margin-right: 3px;
+    padding: 18px 20px;
+  }
+}
+</style>
+
+<section class="landsat-map">
+  <div class="search-container">
+    <button class="icon-button">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/04e68b2b04a9d9d2f29948b9856842b5fd83ef955d349fa4dd209134d7017c9d?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="" class="icon-image" />
+    </button>
+    <div class="searchbar">
+      <button class="search-icon">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1da5e7aee08f41450ed937a228166e23946d2edb6a18a0329d4ce3e9706383df?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" alt="Search" class="icon-image" />
+      </button>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <h2 class="grid-title">3x3 Grid of Landsat Pixels:</h2>
+    <div class="pixel-grid">
+      <div class="pixel-row">
+        <div class="pixel-cell">
+          <button class="pixel-button">Pixel 1</button>
+          <p class="pixel-info">
+            Latitude: 37.7849 Longitude: -122.4094 Cloud Cover: 28.05%
+          </p>
+        </div>
+        <div class="pixel-cell">
+          <button class="pixel-button">Pixel 2</button>
+          <p class="pixel-info">
+            Latitude: 37.7849 Longitude: -122.4294 Cloud Cover: 89.06%
+          </p>
+        </div>
+        <div class="pixel-cell">
+          <button class="pixel-button">Pixel 3</button>
+          <p class="pixel-info">
+            Latitude: 37.7649 Longitude: -122.4094 Cloud Cover: 61.15%
+          </p>
+        </div>
+      </div>
+      <div class="pixel-row">
+        <div class="pixel-cell">
+          <button class="pixel-button">Pixel 4</button>
+          <p class="pixel-info">
+            Latitude: 37.7849 Longitude: -122.4194 Cloud Cover: 85.60%
+          </p>
+        </div>
+        <div class="pixel-cell target-pixel">
+          <button class="pixel-button">Pixel 5 (Target)</button>
+          <p class="pixel-info">
+            Latitude: 37.7749 Longitude: -122.4194 Cloud Cover: 9.80%
+          </p>
+        </div>
+        <div class="pixel-cell">
+          <button class="pixel-button">Pixel 6</button>
+          <p class="pixel-info">
+            Latitude: 37.7649 Longitude: -122.4294 Cloud Cover: 51.51%
+          </p>
+        </div>
+      </div>
+      <div class="pixel-row">
+        <div class="pixel-cell">
+          <button class="pixel-button">Pixel 7</button>
+          <p class="pixel-info">
+            Latitude: 37.7649 Longitude: -122.4094 Cloud Cover: 64.52%
+          </p>
+        </div>
+        <div class="pixel-cell">
+          <button class="pixel-button">Pixel 8</button>
+          <p class="pixel-info">
+            Latitude: 37.7849 Longitude: -122.4294 Cloud Cover: 72.80%
+          </p>
+        </div>
+        <div class="pixel-cell">
+          <button class="pixel-button">Pixel 9</button>
+          <p class="pixel-info">
+            Latitude: 37.7649 Longitude: -122.4194 Cloud Cover: 48.15%
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
