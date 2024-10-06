@@ -1,0 +1,436 @@
+<style>
+.home-planet {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.planet-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  padding: 48px 20px 190px;
+}
+
+@media (max-width: 991px) {
+  .planet-content {
+    max-width: 100%;
+    padding-bottom: 100px;
+  }
+}
+
+.top-bar {
+  align-self: stretch;
+  display: flex;
+  width: 100%;
+  gap: 27px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .top-bar {
+    max-width: 100%;
+  }
+}
+
+.notification-area {
+  position: relative;
+  display: flex;
+  align-items: start;
+  gap: 14px;
+}
+
+.icon-button {
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+  display: flex;
+  width: 56px;
+  height: 56px;
+  padding: 0 4px;
+}
+
+.icon-image {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 28px;
+  margin: auto;
+}
+
+.notification-dot {
+  background-color: #FF1010;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+  right: 3px;
+  top: 1px;
+}
+
+.search-bar {
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  display: flex;
+  min-height: 56px;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.search-button {
+  border-radius: 100px;
+  align-self: stretch;
+  display: flex;
+  width: 56px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 4px;
+}
+
+.shortcut-container {
+  display: flex;
+  width: 892px;
+  max-width: 100%;
+  align-items: start;
+  gap: 8px;
+  overflow: hidden;
+  color: #FFF;
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 22px 0 0 14px;
+  font: 400 16px Inter, sans-serif;
+}
+
+.shortcut-item {
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  min-height: 30px;
+  overflow: hidden;
+  flex-grow: 1;
+  padding: 4px 9px 4px 12px;
+}
+
+.shortcut-content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.shortcut-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 20px;
+}
+
+.location-info {
+  width: 100%;
+  max-width: 1238px;
+  margin: 118px 0 -38px 17px;
+}
+
+@media (max-width: 991px) {
+  .location-info {
+    max-width: 100%;
+    margin: 40px 0 10px;
+  }
+}
+
+.info-container {
+  gap: 20px;
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  .info-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 43%;
+  margin-left: 0;
+}
+
+@media (max-width: 991px) {
+  .info-column {
+    width: 100%;
+  }
+}
+
+.coordinate-info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-self: stretch;
+  margin: auto 0;
+}
+
+@media (max-width: 991px) {
+  .coordinate-info {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.coordinate-label {
+  color: #FFF;
+  align-self: start;
+  font: 500 20px/1 Poppins, sans-serif;
+}
+
+.coordinate-values {
+  margin-top: 34px;
+}
+
+@media (max-width: 991px) {
+  .coordinate-values {
+    max-width: 100%;
+  }
+}
+
+.coordinate-row {
+  gap: 20px;
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  .coordinate-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+}
+
+.longitude-column {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 19%;
+  margin-left: 0;
+}
+
+@media (max-width: 991px) {
+  .longitude-column {
+    width: 100%;
+  }
+}
+
+.longitude-label {
+  color: #FFF;
+  align-self: stretch;
+  margin: auto 0;
+  font: 500 20px/1 Poppins, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .longitude-label {
+    margin-top: 40px;
+  }
+}
+
+.value-column {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 81%;
+  margin-left: 20px;
+}
+
+@media (max-width: 991px) {
+  .value-column {
+    width: 100%;
+  }
+}
+
+.value-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.latitude-value {
+  border-radius: 8px;
+  display: flex;
+  height: 66px;
+}
+
+.longitude-value {
+  border-radius: 8px;
+  display: flex;
+  margin-top: 87px;
+  height: 74px;
+}
+
+@media (max-width: 991px) {
+  .longitude-value {
+    margin-top: 40px;
+  }
+}
+
+.place-info {
+  display: flex;
+  margin-top: 49px;
+  padding-left: 9px;
+  flex-direction: column;
+  color: #FFF;
+  font: 500 20px/1 Poppins, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .place-info {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.place-name {
+  align-self: start;
+}
+
+.place-value {
+  border-radius: 8px;
+  align-self: end;
+  display: flex;
+  margin-top: 33px;
+  width: 409px;
+  max-width: 100%;
+  height: 74px;
+}
+
+.map-column {
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 57%;
+  margin-left: 20px;
+}
+
+@media (max-width: 991px) {
+  .map-column {
+    width: 100%;
+  }
+}
+
+.map-image {
+  aspect-ratio: 1.21;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+@media (max-width: 991px) {
+  .map-image {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+</style>
+
+<section class="home-planet">
+  <div class="planet-content">
+    <div class="top-bar">
+      <div class="notification-area">
+        <button class="icon-button" aria-label="Notification">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/915ca25f77bcd5dbb935d9e7c5b4d718f958bc68432f782f0f90087543e607d0?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="icon-image" alt="Notification icon" />
+        </button>
+        <button class="icon-button" aria-label="Settings">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b7afca328a20d70baff2a2103fdc3776b26aa41c728a00ae5791c235681ea12b?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="icon-image" alt="Settings icon" />
+        </button>
+        <div class="notification-dot" aria-hidden="true"></div>
+      </div>
+      <div class="search-bar" role="search">
+        <button class="search-button" aria-label="Search">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e66811e8cc17107f880da2621999c34d01484a4a6d80db416f650517d6642dbc?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="icon-image" alt="Search icon" />
+        </button>
+      </div>
+    </div>
+    <nav class="shortcut-container">
+      <button class="shortcut-item">
+        <div class="shortcut-content">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/69b944134680822166a778cd91f2340afbbd8d1877839c21d4d86ac5fb299eaf?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="shortcut-icon" alt="Visible Now icon" />
+          <span>Visible Now: 0</span>
+        </div>
+      </button>
+      <button class="shortcut-item">
+        <div class="shortcut-content">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f072692b11fd709274d7c268f25140a2901512980a7252252ce93044be6f0d3?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="shortcut-icon" alt="Above me icon" />
+          <span>Above me</span>
+        </div>
+      </button>
+      <button class="shortcut-item">
+        <div class="shortcut-content">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9cf408a294024d5c18c045ddd7690f881c49073d439620b12497a9a3e62614d6?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="shortcut-icon" alt="Favorite icon" />
+          <span>Favorite</span>
+        </div>
+      </button>
+      <button class="shortcut-item">
+        <div class="shortcut-content">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c26bb5b3c3746f2997d4023fd8a4332c2efadc0b629cdf0a318f3617b590017e?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="shortcut-icon" alt="ISS icon" />
+          <span>ISS</span>
+        </div>
+      </button>
+      <button class="shortcut-item">
+        <div class="shortcut-content">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/77504f059d635515274298ddb6d45f2cb00bda7764c484dd750e71c83c4012f5?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="shortcut-icon" alt="Starlink icon" />
+          <span>Starlink above me</span>
+        </div>
+      </button>
+      <button class="shortcut-item">
+        <div class="shortcut-content">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0282b64698b7df56b7ecafa31b0824e0f5d58f3b98947a403ad723676874029f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="shortcut-icon" alt="Launch icon" />
+          <span>Launched in 30 days</span>
+        </div>
+      </button>
+    </nav>
+    <div class="location-info">
+      <div class="info-container">
+        <div class="info-column">
+          <div class="coordinate-info">
+            <h2 class="coordinate-label">Latitude</h2>
+            <div class="coordinate-values">
+              <div class="coordinate-row">
+                <div class="longitude-column">
+                  <h2 class="longitude-label">Longitude</h2>
+                </div>
+                <div class="value-column">
+                  <div class="value-container">
+                    <div class="latitude-value" aria-label="Latitude value"></div>
+                    <div class="longitude-value" aria-label="Longitude value"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="place-info">
+              <h2 class="place-name">Place Name</h2>
+              <div class="place-value" aria-label="Place name value"></div>
+            </div>
+          </div>
+        </div>
+        <div class="map-column">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/70d50dbb175e40867d4a7636fb69b4cfc392ec3a1d2a9e555a9b65cd204a0af2?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="map-image" alt="Map of the location" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
