@@ -1,1 +1,149 @@
+<style>
+.satellite-tracker-container {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 272px 80px;
+}
+
+.satellite-icon {
+  display: flex;
+  width: 241px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.satellite-orbit {
+  border-radius: 50%;
+  align-self: stretch;
+  display: flex;
+  width: 100%;
+  padding-bottom: 11px;
+  flex-direction: column;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.satellite-dots {
+  align-self: center;
+  z-index: 10;
+  display: flex;
+  width: 108px;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: space-between;
+  margin: -4px 0 0 15px;
+}
+
+.dot {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 16px;
+  border-radius: 0;
+}
+
+.dot-offset {
+  margin-top: 12px;
+}
+
+.satellite-image {
+  aspect-ratio: 1.64;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  background-blend-mode: screen;
+  align-self: flex-start;
+  margin-top: 9px;
+}
+
+.dot-bottom {
+  align-self: flex-end;
+  margin: 7px 50px 0 0;
+}
+
+.brand-name {
+  color: #fff;
+  margin-top: 17px;
+  font: 400 24px Tilt Warp, sans-serif;
+}
+
+.product-name {
+  color: #fff;
+  margin-top: 10px;
+  font: 700 15px Space Grotesk, sans-serif;
+}
+
+.cta-button {
+  border-radius: 52px;
+  display: flex;
+  margin-top: 119px;
+  width: 171px;
+  max-width: 100%;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  color: #fff;
+  justify-content: center;
+  padding: 16px 33px;
+  font: 500 16px Space Grotesk, sans-serif;
+}
+
+.cta-text {
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.cta-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 24px;
+  border-radius: 100px;
+  align-self: stretch;
+  margin: auto 0;
+}
+
+@media (max-width: 991px) {
+  .satellite-tracker-container {
+    padding: 100px 20px;
+  }
+
+  .satellite-image {
+    margin-right: -13px;
+  }
+
+  .dot-bottom {
+    margin-right: 10px;
+  }
+
+  .cta-button {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+}
+</style>
+
+<section class="satellite-tracker-container">
+  <div class="satellite-icon">
+    <div class="satellite-orbit">
+      <div class="satellite-dots">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecc9367ffd88bcfae97426ce1ef4485913e6ed4b5e05b6aa231fb9093694fc9b?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="dot" alt="" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a333018ea1ab2aa0a112ef88042dd92309ef66f9e6a86ebd49c4770855d120a7?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="dot dot-offset" alt="" />
+      </div>
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/68c069f21eaaf85687088b113e4eaf3dd1ad0ab0ee60f091c0e6c88d4fea9892?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="satellite-image" alt="Satellite tracker illustration" />
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8486af52e405843d2b0095b436c8d8f848c54780288d6eae44a176a67b80055f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="dot dot-bottom" alt="" />
+    </div>
+  </div>
+  <h1 class="brand-name">lumasatellite</h1>
+  <h2 class="product-name">satellite tracker</h2>
+  <a href="#" class="cta-button" role="button">
+    <span class="cta-text">Get start</span>
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/093ba148d1162962550a14d39802eefa22f070031f0dcc843e3110f5914e443f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="cta-icon" alt="" />
+  </a>
+</section>
 
