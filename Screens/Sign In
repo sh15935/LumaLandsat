@@ -1,0 +1,419 @@
+<style>
+.sign-in-container {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: flex-end;
+  padding: 0 0 73px 80px;
+}
+
+@media (max-width: 991px) {
+  .sign-in-container {
+    padding-left: 20px;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1079px;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .content-wrapper {
+    max-width: 100%;
+  }
+}
+
+.logo-container {
+  align-self: flex-end;
+  display: flex;
+  margin-top: 361px;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .logo-container {
+    margin-top: 40px;
+  }
+}
+
+.logo-circle {
+  border-radius: 50%;
+  align-self: stretch;
+  display: flex;
+  width: 100%;
+  padding-bottom: 11px;
+  flex-direction: column;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.logo-elements {
+  align-self: center;
+  z-index: 10;
+  display: flex;
+  width: 108px;
+  max-width: 100%;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: space-between;
+  margin: -4px 0 0 15px;
+}
+
+.logo-element {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 16px;
+  border-radius: 0;
+}
+
+.logo-element-offset {
+  margin-top: 12px;
+}
+
+.logo-main {
+  aspect-ratio: 1.38;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  background-blend-mode: screen;
+  margin-top: 9px;
+}
+
+.logo-bottom {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 16px;
+  border-radius: 0;
+  align-self: flex-end;
+  margin: 7px 49px 0 0;
+}
+
+@media (max-width: 991px) {
+  .logo-bottom {
+    margin-right: 10px;
+  }
+}
+
+.brand-name {
+  color: #fff;
+  margin-top: 17px;
+  font: 400 24px Tilt Warp, sans-serif;
+}
+
+.brand-description {
+  color: #fff;
+  margin-top: 10px;
+  font: 700 15px Space Grotesk, sans-serif;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .form-container {
+    max-width: 100%;
+  }
+}
+
+.header-image {
+  display: flex;
+  padding-bottom: 332px;
+  flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .header-image {
+    max-width: 100%;
+    padding-bottom: 100px;
+  }
+}
+
+.header-fade {
+  display: flex;
+  margin-bottom: -66px;
+  height: 103px;
+}
+
+@media (max-width: 991px) {
+  .header-fade {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.form-content {
+  display: flex;
+  margin-top: 32px;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: Poppins, sans-serif;
+  color: #fff;
+  font-weight: 500;
+  padding: 0 38px 0 12px;
+}
+
+@media (max-width: 991px) {
+  .form-content {
+    max-width: 100%;
+    padding-right: 20px;
+  }
+}
+
+.form-title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.email-input-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  position: relative;
+  aspect-ratio: 5.658;
+  gap: 10px;
+  font-size: 13px;
+  color: #a4a4a4;
+  white-space: nowrap;
+  margin: 34px 0 0 17px;
+  padding: 25px 20px;
+}
+
+@media (max-width: 991px) {
+  .email-input-container {
+    margin-left: 10px;
+    white-space: initial;
+  }
+}
+
+.email-input-bg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.email-icon {
+  aspect-ratio: 1.21;
+  object-fit: contain;
+  object-position: center;
+  width: 23px;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.email-placeholder {
+  position: relative;
+  flex-basis: auto;
+  flex-grow: 1;
+}
+
+.sign-up-button {
+  border-radius: 15px;
+  width: 412px;
+  max-width: 100%;
+  font-size: 18px;
+  margin: 48px 0 0 17px;
+  padding: 16px 70px 32px;
+}
+
+@media (max-width: 991px) {
+  .sign-up-button {
+    margin: 40px 0 0 10px;
+    padding: 0 20px;
+  }
+}
+
+.separator-image {
+  object-fit: contain;
+  object-position: center;
+  width: 448px;
+  max-width: 100%;
+  margin: 65px 20px 0 0;
+}
+
+@media (max-width: 991px) {
+  .separator-image {
+    margin: 40px 10px 0 0;
+  }
+}
+
+.alternative-text {
+  color: #b6b6b6;
+  margin: 43px 386px 0 0;
+  font: 600 10px Poppins, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .alternative-text {
+    margin: 40px 10px 0 0;
+  }
+}
+
+.social-buttons {
+  display: flex;
+  gap: 8px;
+  color: #fff;
+  white-space: nowrap;
+  margin: 37px 20px 0 0;
+  font: 600 12px Poppins, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .social-buttons {
+    margin-right: 10px;
+    white-space: initial;
+  }
+}
+
+.social-button {
+  display: flex;
+  flex-direction: column;
+  border-radius: 9px;
+  position: relative;
+  aspect-ratio: 3.86;
+  width: 220px;
+  justify-content: center;
+  padding: 16px 60px;
+}
+
+@media (max-width: 991px) {
+  .social-button {
+    white-space: initial;
+    padding: 0 20px;
+  }
+}
+
+.social-button-bg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.social-button-content {
+  position: relative;
+  display: flex;
+  min-height: 25px;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .social-button-content {
+    white-space: initial;
+  }
+}
+
+.social-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 15px;
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.social-text {
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.terms-text {
+  color: #b6b6b6;
+  margin: 29px 222px 0 0;
+  font: 500 10px Poppins, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .terms-text {
+    margin-right: 10px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.google-button {
+  background-color: #080062;
+}
+
+.facebook-button {
+  background-color: #000c7a;
+}
+</style>
+
+<section class="sign-in-container">
+  <div class="content-wrapper">
+    <div class="logo-container">
+      <div class="logo-circle">
+        <div class="logo-elements">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecc9367ffd88bcfae97426ce1ef4485913e6ed4b5e05b6aa231fb9093694fc9b?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="logo-element" alt="" />
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a333018ea1ab2aa0a112ef88042dd92309ef66f9e6a86ebd49c4770855d120a7?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="logo-element logo-element-offset" alt="" />
+        </div>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e0ba1825e418db71639456abd9dc8d62039476e4d039d6e82b40694acb667d8f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="logo-main" alt="Lumasatellite logo" />
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8486af52e405843d2b0095b436c8d8f848c54780288d6eae44a176a67b80055f?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="logo-bottom" alt="" />
+      </div>
+      <h1 class="brand-name">lumasatellite</h1>
+      <p class="brand-description">satellite tracker</p>
+    </div>
+    <div class="form-container">
+      <div class="header-image">
+        <div class="header-fade"></div>
+      </div>
+      <form class="form-content">
+        <h2 class="form-title">Sign in with email address</h2>
+        <div class="email-input-container">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5501ab9c9d7d53407842eea01ff1512c328e9c2e5dd3bd6f0687f08f87f71966?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="email-input-bg" alt="" />
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/75f1f2cf3a9b00ce220f3cd264f1257b797e36852227d12f9408689f0cad5f28?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="email-icon" alt="Email icon" />
+          <label for="email-input" class="visually-hidden">Email address</label>
+          <input type="email" id="email-input" class="email-placeholder" placeholder="Yourname@gmail.com" aria-label="Email address" />
+        </div>
+        <button type="submit" class="sign-up-button">Sign up</button>
+      </form>
+    </div>
+  </div>
+  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1f706ef5fec98648ca0c40e0f567a842b183c41966a61ba39cf27862a1b5cb7?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="separator-image" alt="" />
+  <p class="alternative-text">Or continue with</p>
+  <div class="social-buttons">
+    <button class="social-button">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3ed18724518819c62134e081b1b2dcf91f50220a82284ba2bff00203f507d86e?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="social-button-bg" alt="" />
+      <div class="social-button-content google-button">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d9960885da0f9874bdbdda2f8141e4e07380662ed4e1839ac9e18a8bc6097c0a?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="social-icon" alt="Google icon" />
+        <span class="social-text">Google</span>
+      </div>
+    </button>
+    <button class="social-button">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1190db51a1c2545276a0ab8d1cb8b4c235bd8b1c0eb61631eea717b9d3dee5a7?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="social-button-bg" alt="" />
+      <div class="social-button-content facebook-button">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ac123e1cbceb13ad85c429e86ed8e933bcebbdb919e08120801546fc95809a4?placeholderIfAbsent=true&apiKey=98d5a04c4d86430c996d6fcb326fc955" class="social-icon" alt="Facebook icon" />
+        <span class="social-text">Facebook</span>
+      </div>
+    </button>
+  </div>
+  <p class="terms-text">By registering you with our <span style="color: #5f5c8b;">Terms and Conditions</span></p>
+</section>
